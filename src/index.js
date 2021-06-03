@@ -1,17 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+    return (
+        <div className ="ui container comments">
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+            <ApprovalCard> <h4>Warning!</h4>Are you sure you want to do this?
+
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail author="Sam" timeAgo="Today at 4:45PM" commentLine="This is great!"/>
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="Alex" timeAgo="Today at 7:39PM" commentLine="Nice work!"/>
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="Jane" timeAgo="Yesterday at 4:03PM" commentLine="Amazing job!"/>
+            </ApprovalCard>
+        </div>
+
+    );
+};
+
+
+ReactDOM.render(<App />, document.querySelector('#root'));
